@@ -1,0 +1,50 @@
+{
+  "name": "tree-shaking-demo",
+  "version": "1.0.0",
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build": "parcel build --no-source-maps --no-cache",
+    "analyze": "parcel build --target unity --no-cache --reporter @parcel/reporter-bundle-analyzer"
+  },
+  "targets": {
+    "module": {
+      "optimize": true
+    },
+    "lodash": {
+      "source": "src/lodash/index.js",
+      "distDir": "dist/lodash",
+      "engines": {
+        "browsers": "Chrome 80"
+      }
+    },
+    "unity": {
+      "source": "src/unity/index.js",
+      "distDir": "dist/unity",
+      "engines": {
+        "browsers": "Chrome 80"
+      }
+    },
+    "ui-components": {
+      "source": "src/ui-components/index.js",
+      "distDir": "dist/ui-components",
+      "engines": {
+        "browsers": "Chrome 80"
+      }
+    }
+  },
+  "author": "Wayne",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@dicetechnology/dice-backoffice-ui-components": "^4.30.0",
+    "@dicetechnology/dice-unity": "^3.15.3-alpha.0",
+    "@remix-run/router": "^1.19.2",
+    "lodash-es": "^4.17.21",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@parcel/reporter-bundle-analyzer": "^2.12.0",
+    "parcel": "^2.12.0"
+  }
+}
